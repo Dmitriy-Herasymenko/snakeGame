@@ -29,7 +29,7 @@ useEffect( () => {
 }, [state.direction]);
 
 useEffect( () => {
-  setInterval( () => {
+  setTimeout( () => {
     moveSnake();
  }, state.speed)
 }, [state.snakeDots]);
@@ -59,28 +59,23 @@ const setDirection = key => {
       case 38:
         setDirection('UP');
         break;
-    }
-    switch (e.keyCode) {
       case 40:
         setDirection('DOWN');
         break;
-    }
-    switch (e.keyCode) {
       case 37:
         setDirection('LEFT');
         break;
-    }
-    switch (e.keyCode) {
       case 39:
         setDirection('RIGHT');
         break;
+      default:
+        console.log('default value');
     }
   };
 
   const moveSnake = () => {
     let dots = [...state.snakeDots];
     let head = dots[dots.length - 1];
-    console.log("head", head)
     switch (state.direction) {
       case 'RIGHT':
         head = [head[0] + 2, head[1]];
@@ -94,6 +89,8 @@ const setDirection = key => {
       case 'UP':
         head = [head[0], head[1] - 2];
         break;
+      default:
+        console.log('default value');
     }
     dots = [...dots, head];
     setSnakeDots(dots);
@@ -104,7 +101,6 @@ const setDirection = key => {
     <div className="game-arena">
       <Snake snakeDots={state.snakeDots}/>
       <Food dot={state.food}/>
-
     </div>
   );
 }
