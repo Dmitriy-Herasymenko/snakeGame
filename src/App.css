@@ -1,9 +1,19 @@
+body {
+  background: #222;
+  background: radial-gradient(#333, #111);
+  background-size: cover;
+  color: #fff;
+  font: 100%/1.5 sans-serif;
+
+}
+
 .game-arena {
   position: relative;
-  margin: 50px auto;
+  margin: 10% auto;
   width: 600px;
   height: 600px;
-  border: 2px solid #000;
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .snake {
@@ -13,6 +23,12 @@
   background-color: #000;
   border: 1px solid #fff;
   z-index: 2;
+}
+.snake:last-child {
+  background-color: white;
+}
+.snake:first-child {
+  background-color: red;
 }
 
 .food {
