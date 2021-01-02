@@ -4,6 +4,7 @@ body {
   background-size: cover;
   color: #fff;
   font: 100%/1.5 sans-serif;
+  overflow: hidden;
 
 }
 
@@ -27,8 +28,9 @@ body {
 .snake:last-child {
   background-color: white;
 }
-.snake:first-child {
-  background-color: red;
+
+ul{
+  list-style: none;
 }
 
 .food {

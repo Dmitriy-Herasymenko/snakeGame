@@ -2,14 +2,15 @@ import React from "react";
 
 export default function Snake (props) {
     return (
-        <div>
+        <ul>
             {props.snakeDots.map((dot, i) => {
                 const style = {
-                    left: `${dot[0]}%`,
-                    top: `${dot[1]}%`
-                }
-                return <div className="snake" key={i} style={style} />
+                    left: `${dot.left}%`,
+                    top: `${dot.top}%`
+                };
+                return <li key={i} className="snake" style={style} />
+
             })}
-        </div>
+        </ul>
     )
 };
